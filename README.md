@@ -1,0 +1,1 @@
+# Apagando_os_foque
