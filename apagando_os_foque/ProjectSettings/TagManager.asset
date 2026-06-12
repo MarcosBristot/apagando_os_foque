@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - IlluminatedZone
+  - 'PlayerAttack '
   layers:
   - Default
   - TransparentFX

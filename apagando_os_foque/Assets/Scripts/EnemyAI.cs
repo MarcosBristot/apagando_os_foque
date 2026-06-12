@@ -15,10 +15,10 @@ public class EnemyAI : MonoBehaviour
 
     private int currentWaypointIndex = 0;
     private Transform player;
+    private bool playerIsIlluminated = false;
 
     void Start()
     {
-        // Encontra o player pelo nome ou tag
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) player = playerObj.transform;
     }
@@ -49,14 +49,21 @@ public class EnemyAI : MonoBehaviour
 
     void HandleAlert()
     {
-        // Fica parado por um tempo, olha ao redor — stub por enquanto
-        // No Sprint 2 vira Chase se o player entrar na zona iluminada
-        currentState = EnemyState.Patrol;
+        // Fica em alerta por 2 segundos, depois volta a patrulhar
+        Invoke(nameof(ReturnToPatrol), 2f);
     }
 
     void HandleChase()
     {
         if (player == null) return;
+
+        // Para de perseguir se o player sair da luz
+        if (!playerIsIlluminated)
+        {
+            currentState = EnemyState.Alert;
+            return;
+        }
+
         transform.position = Vector2.MoveTowards(
             transform.position, player.position, moveSpeed * 1.5f * Time.deltaTime);
     }
@@ -65,14 +72,28 @@ public class EnemyAI : MonoBehaviour
     {
         if (player == null) return;
 
-        Collider2D hit = Physics2D.OverlapCircle(
-            transform.position, detectionRadius, LayerMask.GetMask("Player"));
+        float dist = Vector2.Distance(transform.position, player.position);
 
-        if (hit != null)
+        // Só persegue se o player estiver iluminado E dentro do raio
+        if (dist <= detectionRadius && playerIsIlluminated)
+            currentState = EnemyState.Chase;
+    }
+
+    void ReturnToPatrol()
+    {
+        if (currentState == EnemyState.Alert)
+            currentState = EnemyState.Patrol;
+    }
+
+    // Chamado pelo LightSource quando o player entra/sai da zona iluminada
+    public void SetPlayerIlluminated(bool illuminated)
+    {
+        playerIsIlluminated = illuminated;
+
+        if (illuminated && currentState == EnemyState.Patrol)
             currentState = EnemyState.Alert;
     }
 
-    // Visualiza o raio de detecção no editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
