@@ -13,9 +13,13 @@ public class EnemyAI : MonoBehaviour
     [Header("Detecção")]
     public float detectionRadius = 4f;
 
+    [Header("Alerta")]
+    public float alertDuration = 2f;
+
     private int currentWaypointIndex = 0;
     private Transform player;
     private bool playerIsIlluminated = false;
+    private float alertTimer = 0f;
 
     void Start()
     {
@@ -49,17 +53,23 @@ public class EnemyAI : MonoBehaviour
 
     void HandleAlert()
     {
-        // Fica em alerta por 2 segundos, depois volta a patrulhar
-        Invoke(nameof(ReturnToPatrol), 2f);
+        // conta o tempo em alerta usando deltaTime, sem Invoke
+        alertTimer += Time.deltaTime;
+
+        if (alertTimer >= alertDuration)
+        {
+            alertTimer = 0f;
+            currentState = EnemyState.Patrol;
+        }
     }
 
     void HandleChase()
     {
         if (player == null) return;
 
-        // Para de perseguir se o player sair da luz
         if (!playerIsIlluminated)
         {
+            alertTimer = 0f;
             currentState = EnemyState.Alert;
             return;
         }
@@ -74,24 +84,22 @@ public class EnemyAI : MonoBehaviour
 
         float dist = Vector2.Distance(transform.position, player.position);
 
-        // Só persegue se o player estiver iluminado E dentro do raio
         if (dist <= detectionRadius && playerIsIlluminated)
+        {
+            alertTimer = 0f;
             currentState = EnemyState.Chase;
+        }
     }
 
-    void ReturnToPatrol()
-    {
-        if (currentState == EnemyState.Alert)
-            currentState = EnemyState.Patrol;
-    }
-
-    // Chamado pelo LightSource quando o player entra/sai da zona iluminada
     public void SetPlayerIlluminated(bool illuminated)
     {
         playerIsIlluminated = illuminated;
 
         if (illuminated && currentState == EnemyState.Patrol)
+        {
+            alertTimer = 0f;
             currentState = EnemyState.Alert;
+        }
     }
 
     void OnDrawGizmosSelected()
