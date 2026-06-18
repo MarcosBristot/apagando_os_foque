@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private StaminaSystem stamina;
-    private bool naLuz = false;
+    public bool naLuz = false;
 
     void Start()
     {
@@ -80,15 +80,20 @@ public class PlayerController : MonoBehaviour
     }
 
     // chamado por ataque (Sprint 2)
-    public void Atacar()
+   public void Atacar()
     {
-        // hitbox de ataque — será expandido com animação
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
         foreach (var hit in hits)
         {
+            // tenta acertar lampião
             Lantern lanterna = hit.GetComponent<Lantern>();
             if (lanterna != null)
                 lanterna.TakeHit();
+
+            // tenta acertar inimigo
+            EnemyAI inimigo = hit.GetComponent<EnemyAI>();
+            if (inimigo != null)
+                inimigo.ReceberDano(1);
         }
     }
 
