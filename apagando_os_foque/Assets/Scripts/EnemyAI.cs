@@ -12,23 +12,42 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Detecção")]
     public float detectionRadius = 4f;
-
-    [Header("Alerta")]
     public float alertDuration = 2f;
+
+    [Header("Vida")]
+    public int vidaMaxima = 3;
+    private int vidaAtual;
+    private bool morto = false;
 
     private int currentWaypointIndex = 0;
     private Transform player;
-    private bool playerIsIlluminated = false;
+    private PlayerController playerController;
     private float alertTimer = 0f;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
+        rb.freezeRotation = true;
+        vidaAtual = vidaMaxima;
+
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null) player = playerObj.transform;
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+            playerController = playerObj.GetComponent<PlayerController>();
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        if (morto)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         switch (currentState)
         {
             case EnemyState.Patrol: HandlePatrol(); break;
@@ -39,68 +58,128 @@ public class EnemyAI : MonoBehaviour
 
     void HandlePatrol()
     {
-        if (waypoints.Length == 0) return;
+        if (waypoints.Length == 0) { rb.linearVelocity = Vector2.zero; return; }
 
         Transform target = waypoints[currentWaypointIndex];
-        transform.position = Vector2.MoveTowards(
-            transform.position, target.position, moveSpeed * Time.deltaTime);
+        Vector2 direcao = ((Vector2)target.position - rb.position).normalized;
+        float dist = Vector2.Distance(rb.position, target.position);
 
-        if (Vector2.Distance(transform.position, target.position) < waypointTolerance)
+        if (dist < waypointTolerance)
+        {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
-        DetectPlayer();
+        rb.linearVelocity = direcao * moveSpeed;
+
+        if (PlayerEstaIluminadoPerto())
+        {
+            rb.linearVelocity = Vector2.zero;
+            alertTimer = alertDuration;
+            currentState = EnemyState.Alert;
+        }
     }
 
     void HandleAlert()
     {
-        // conta o tempo em alerta usando deltaTime, sem Invoke
-        alertTimer += Time.deltaTime;
+        // para completamente em Alert
+        rb.linearVelocity = Vector2.zero;
+        alertTimer -= Time.fixedDeltaTime;
 
-        if (alertTimer >= alertDuration)
+        if (alertTimer <= 0f)
         {
-            alertTimer = 0f;
+            currentWaypointIndex = EncontrarWaypointMaisProximo();
             currentState = EnemyState.Patrol;
+            return;
         }
+
+        if (PlayerEstaIluminadoPerto())
+            currentState = EnemyState.Chase;
     }
 
     void HandleChase()
     {
-        if (player == null) return;
+        if (player == null) { rb.linearVelocity = Vector2.zero; return; }
 
-        if (!playerIsIlluminated)
+        if (!PlayerEstaIluminado())
         {
-            alertTimer = 0f;
+            rb.linearVelocity = Vector2.zero;
+            alertTimer = alertDuration;
             currentState = EnemyState.Alert;
             return;
         }
 
-        transform.position = Vector2.MoveTowards(
-            transform.position, player.position, moveSpeed * 1.5f * Time.deltaTime);
-    }
+        float dist = Vector2.Distance(rb.position, player.position);
 
-    void DetectPlayer()
-    {
-        if (player == null) return;
-
-        float dist = Vector2.Distance(transform.position, player.position);
-
-        if (dist <= detectionRadius && playerIsIlluminated)
+        if (dist > detectionRadius * 2.5f)
         {
-            alertTimer = 0f;
-            currentState = EnemyState.Chase;
-        }
-    }
-
-    public void SetPlayerIlluminated(bool illuminated)
-    {
-        playerIsIlluminated = illuminated;
-
-        if (illuminated && currentState == EnemyState.Patrol)
-        {
-            alertTimer = 0f;
+            rb.linearVelocity = Vector2.zero;
+            alertTimer = alertDuration;
             currentState = EnemyState.Alert;
+            return;
         }
+
+        if (dist < 0.8f)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        Vector2 direcao = ((Vector2)player.position - rb.position).normalized;
+        rb.linearVelocity = direcao * moveSpeed * 1.5f;
     }
+
+    public void ReceberDano(int dano = 1)
+    {
+        if (morto) return;
+        vidaAtual -= dano;
+        if (vidaAtual <= 0) Morrer();
+    }
+
+    void Morrer()
+    {
+        morto = true;
+        rb.linearVelocity = Vector2.zero;
+        foreach (var col in GetComponents<Collider2D>())
+            col.enabled = false;
+        Destroy(gameObject, 0.1f);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerAttack"))
+            ReceberDano(1);
+    }
+
+    bool PlayerEstaIluminadoPerto()
+    {
+        if (player == null || playerController == null) return false;
+        return playerController.naLuz &&
+               Vector2.Distance(rb.position, player.position) <= detectionRadius;
+    }
+
+    bool PlayerEstaIluminado()
+    {
+        if (playerController == null) return false;
+        return playerController.naLuz;
+    }
+
+    int EncontrarWaypointMaisProximo()
+    {
+        if (waypoints.Length == 0) return 0;
+        int indice = 0;
+        float menorDist = float.MaxValue;
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            if (waypoints[i] == null) continue;
+            float dist = Vector2.Distance(rb.position, waypoints[i].position);
+            if (dist < menorDist) { menorDist = dist; indice = i; }
+        }
+        return indice;
+    }
+
+    public void SetPlayerIlluminated(bool illuminated) { }
 
     void OnDrawGizmosSelected()
     {

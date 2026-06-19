@@ -58,7 +58,11 @@ public class StaminaSystem : MonoBehaviour
             aoAlterarVida?.Invoke(vidaAtual / vidaMax);
 
             if (vidaAtual <= 0)
+            {
                 aoMorrer?.Invoke();
+                GameManager.Instance?.Morrer();
+                enabled = false;
+            }
         }
     }
 

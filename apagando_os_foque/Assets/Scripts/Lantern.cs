@@ -3,20 +3,20 @@ using UnityEngine;
 public class Lantern : MonoBehaviour
 {
     private LightSource lightSource;
+    private LampiaoCaipira lampiaoCaipira;
 
     void Awake()
     {
         lightSource = GetComponent<LightSource>();
+        lampiaoCaipira = GetComponent<LampiaoCaipira>();
     }
 
-    // Chamado pelo ataque do Adelar (o Líder vai conectar isso ao PlayerController)
     public void TakeHit()
     {
-        if (lightSource != null)
-            lightSource.BreakLight();
+        if (lightSource != null) lightSource.BreakLight();
+        if (lampiaoCaipira != null) lampiaoCaipira.BreakLight();
     }
 
-    // Detecta colisão com o ataque do player
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerAttack"))
