@@ -3,10 +3,11 @@ using UnityEngine;
 public class LampiaoCaipira : MonoBehaviour
 {
     [Header("Configuração")]
-    public float radius = 2.5f; // raio menor que o poste
+    public float radius = 2.5f;
     public bool isBreakable = true;
 
     private CircleCollider2D lightCollider;
+    private LightSource lightSource;
 
     void Awake()
     {
@@ -18,6 +19,8 @@ public class LampiaoCaipira : MonoBehaviour
         lightCollider.isTrigger = true;
         gameObject.tag = "IlluminatedZone";
         gameObject.layer = LayerMask.NameToLayer("LuzLayer");
+
+        lightSource = GetComponent<LightSource>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -41,13 +44,13 @@ public class LampiaoCaipira : MonoBehaviour
         foreach (var enemy in FindObjectsOfType<EnemyAI>())
             enemy.SetPlayerIlluminated(false);
 
+        LightManager.Instance?.RegistrarLuzApagada();
+
+        // apaga o LightSource também para parar o dano de stamina
+        if (lightSource != null)
+            lightSource.BreakLight();
+
         lightCollider.enabled = false;
         gameObject.SetActive(false);
-    }
-
-    void OnTriggerEnter2D_Attack(Collider2D other)
-    {
-        if (other.CompareTag("PlayerAttack"))
-            BreakLight();
     }
 }

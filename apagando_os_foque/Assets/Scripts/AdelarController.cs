@@ -69,7 +69,9 @@ public class AdelarTopDownController : MonoBehaviour
 
         if (estaVendoLuz)
         {
-            float maiorIntensidade = 0f;
+            // tenta pegar intensidade do LightSource se existir
+            // senão usa intensidade máxima por padrão
+            float maiorIntensidade = 1f;
             foreach (Collider2D col in colisoes)
             {
                 LightSource fonte = col.GetComponent<LightSource>();

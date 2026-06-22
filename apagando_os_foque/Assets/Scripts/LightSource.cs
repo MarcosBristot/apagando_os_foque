@@ -45,8 +45,12 @@ public class LightSource : MonoBehaviour
     public void BreakLight()
     {
         if (!isBreakable) return;
+
         foreach (var enemy in FindObjectsOfType<EnemyAI>())
             enemy.SetPlayerIlluminated(false);
+
+        // notifica o gerenciador de luzes
+        LightManager.Instance?.RegistrarLuzApagada();
 
         lightCollider.enabled = false;
         gameObject.SetActive(false);
