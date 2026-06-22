@@ -1,0 +1,1490 @@
+fileFormatVersion: 2
+guid: 221e2fa026f039b4d9558eab32e89fdb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2332576743643894892
+    second: adelar spritesheet nobg_0
+  - first:
+      213: 9037165483418462881
+    second: adelar spritesheet nobg_1
+  - first:
+      213: -8153746714480427069
+    second: adelar spritesheet nobg_2
+  - first:
+      213: 6824668506862656487
+    second: adelar spritesheet nobg_3
+  - first:
+      213: -3915669371079355681
+    second: adelar spritesheet nobg_4
+  - first:
+      213: -4372502777815534092
+    second: adelar spritesheet nobg_5
+  - first:
+      213: -512433465971158551
+    second: adelar spritesheet nobg_6
+  - first:
+      213: -2180349126064025564
+    second: adelar spritesheet nobg_7
+  - first:
+      213: 2860134508768304455
+    second: adelar spritesheet nobg_8
+  - first:
+      213: 4714232979100616695
+    second: adelar spritesheet nobg_9
+  - first:
+      213: 7673505477305336443
+    second: adelar spritesheet nobg_10
+  - first:
+      213: 5082288966729859341
+    second: adelar spritesheet nobg_11
+  - first:
+      213: -7925181872070730537
+    second: adelar spritesheet nobg_12
+  - first:
+      213: 1870650476488724660
+    second: adelar spritesheet nobg_13
+  - first:
+      213: -5714910220235060348
+    second: adelar spritesheet nobg_14
+  - first:
+      213: 2727602811371608572
+    second: adelar spritesheet nobg_15
+  - first:
+      213: -5152243353627267605
+    second: adelar spritesheet nobg_16
+  - first:
+      213: 4831951108256448942
+    second: adelar spritesheet nobg_17
+  - first:
+      213: -9052090803219289575
+    second: adelar spritesheet nobg_18
+  - first:
+      213: -8689197823265118608
+    second: adelar spritesheet nobg_19
+  - first:
+      213: 2861013125316250063
+    second: adelar spritesheet nobg_20
+  - first:
+      213: 5213109802194938926
+    second: adelar spritesheet nobg_21
+  - first:
+      213: -837927835085725782
+    second: adelar spritesheet nobg_22
+  - first:
+      213: 8198176545129923303
+    second: adelar spritesheet nobg_23
+  - first:
+      213: 4764453683462766432
+    second: adelar spritesheet nobg_24
+  - first:
+      213: -2948591983265751915
+    second: adelar spritesheet nobg_25
+  - first:
+      213: -7734996536539314744
+    second: adelar spritesheet nobg_26
+  - first:
+      213: 3778414695040315003
+    second: adelar spritesheet nobg_27
+  - first:
+      213: 1071989468082135058
+    second: adelar spritesheet nobg_28
+  - first:
+      213: -6030088926707549145
+    second: adelar spritesheet nobg_29
+  - first:
+      213: -4631242345524816015
+    second: adelar spritesheet nobg_30
+  - first:
+      213: -8554336931575063348
+    second: adelar spritesheet nobg_31
+  - first:
+      213: 7758614301480959438
+    second: adelar spritesheet nobg_32
+  - first:
+      213: -6384639195459261015
+    second: adelar spritesheet nobg_33
+  - first:
+      213: 3663419353072275982
+    second: adelar spritesheet nobg_34
+  - first:
+      213: -6544186753205432186
+    second: adelar spritesheet nobg_35
+  - first:
+      213: -3114140116928385232
+    second: adelar spritesheet nobg_36
+  - first:
+      213: 642812201188569199
+    second: adelar spritesheet nobg_37
+  - first:
+      213: 7431953717965308461
+    second: adelar spritesheet nobg_38
+  - first:
+      213: 4971435465570553164
+    second: adelar spritesheet nobg_39
+  - first:
+      213: 6156839389578156906
+    second: adelar spritesheet nobg_40
+  - first:
+      213: -6009185238887721010
+    second: adelar spritesheet nobg_41
+  - first:
+      213: 8987391885993971874
+    second: adelar spritesheet nobg_42
+  - first:
+      213: 4770233505369798979
+    second: adelar spritesheet nobg_43
+  - first:
+      213: 7013730668839526148
+    second: adelar spritesheet nobg_44
+  - first:
+      213: -3029306134496929129
+    second: adelar spritesheet nobg_45
+  - first:
+      213: -4613069182554481957
+    second: adelar spritesheet nobg_46
+  - first:
+      213: 6078875293404159463
+    second: adelar spritesheet nobg_47
+  - first:
+      213: 4349779593023112357
+    second: adelar spritesheet nobg_48
+  - first:
+      213: -2878991016601254962
+    second: adelar spritesheet nobg_49
+  - first:
+      213: 4981535011920104903
+    second: adelar spritesheet nobg_50
+  - first:
+      213: 7339008622292078754
+    second: adelar spritesheet nobg_51
+  - first:
+      213: -3589978435268156604
+    second: adelar spritesheet nobg_52
+  - first:
+      213: 7669232178995508128
+    second: adelar spritesheet nobg_53
+  - first:
+      213: 3525196192236663626
+    second: adelar spritesheet nobg_54
+  - first:
+      213: 3984858505306383418
+    second: adelar spritesheet nobg_55
+  - first:
+      213: -408841731900438288
+    second: adelar spritesheet nobg_56
+  - first:
+      213: 2910824422849681195
+    second: adelar spritesheet nobg_57
+  - first:
+      213: -2692561919838684707
+    second: adelar spritesheet nobg_58
+  - first:
+      213: 3799136190029042600
+    second: adelar spritesheet nobg_59
+  - first:
+      213: 5652457554593820148
+    second: adelar spritesheet nobg_60
+  - first:
+      213: 2517414337836128159
+    second: adelar spritesheet nobg_61
+  - first:
+      213: -8621758398861100322
+    second: adelar spritesheet nobg_62
+  - first:
+      213: -1143332137810287335
+    second: adelar spritesheet nobg_63
+  - first:
+      213: 3912427642129327907
+    second: adelar spritesheet nobg_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_13
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 238
+        width: 35
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0960e72b2e5f910800000000000000
+      internalID: 1870650476488724660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_14
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 238
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bc3affe6f80b0b0800000000000000
+      internalID: -5714910220235060348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_15
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 238
+        width: 32
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf959243e446ad520800000000000000
+      internalID: 2727602811371608572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_16
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 238
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bededa6b7fd8f78b0800000000000000
+      internalID: -5152243353627267605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea14ea3aee98e0340800000000000000
+      internalID: 4831951108256448942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_18
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 238
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91aa88fdf53806280800000000000000
+      internalID: -9052090803219289575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 238
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0766f29fd94c96780800000000000000
+      internalID: -8689197823265118608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_20
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 238
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc98438774c54b720800000000000000
+      internalID: 2861013125316250063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_21
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 238
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2cafeeaebfa85840800000000000000
+      internalID: 5213109802194938926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_22
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 238
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf9d42d2151f54f0800000000000000
+      internalID: -837927835085725782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_23
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 238
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2886ac126c5c170800000000000000
+      internalID: 8198176545129923303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_24
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 238
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f7997c16dbe1240800000000000000
+      internalID: 4764453683462766432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c51e9a63f7417d0800000000000000
+      internalID: -2948591983265751915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_26
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 167
+        width: 34
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c582bcb1a5c7a490800000000000000
+      internalID: -7734996536539314744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_27
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 166
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e6eff6520af6430800000000000000
+      internalID: 3778414695040315003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_28
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 166
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210eef7ddb870ee00800000000000000
+      internalID: 1071989468082135058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_29
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 166
+        width: 42
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c7497e112d05ca0800000000000000
+      internalID: -6030088926707549145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_30
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 167
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1771f36cf958abfb0800000000000000
+      internalID: -4631242345524816015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_31
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 166
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc967032e3e84980800000000000000
+      internalID: -8554336931575063348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_32
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 167
+        width: 37
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdb90da9922cab60800000000000000
+      internalID: 7758614301480959438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_33
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 166
+        width: 40
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad6d9f9a743567a0800000000000000
+      internalID: -6384639195459261015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_34
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 166
+        width: 34
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e021a23fd7417d230800000000000000
+      internalID: 3663419353072275982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_35
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 167
+        width: 40
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6809f5f02d06e25a0800000000000000
+      internalID: -6544186753205432186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_36
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 166
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fa0b5201a58c4d0800000000000000
+      internalID: -3114140116928385232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_37
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 167
+        width: 33
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60b12d8a4abbe800800000000000000
+      internalID: 642812201188569199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_38
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 166
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d224772c78a932760800000000000000
+      internalID: 7431953717965308461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d8c1557361ef440800000000000000
+      internalID: 4971435465570553164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 22
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b50f2fdcc717550800000000000000
+      internalID: 6156839389578156906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_41
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 91
+        width: 34
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7939efcd51b9ca0800000000000000
+      internalID: -6009185238887721010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_42
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 22
+        width: 34
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a016e59d41a9bc70800000000000000
+      internalID: 8987391885993971874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_43
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 89
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349bb3f6916433240800000000000000
+      internalID: 4770233505369798979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_44
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 22
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f517a02e6c55160800000000000000
+      internalID: 7013730668839526148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_45
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 22
+        width: 37
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a1661ee1eb5f5d0800000000000000
+      internalID: -3029306134496929129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_46
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 90
+        width: 37
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdad98105061bffb0800000000000000
+      internalID: -4613069182554481957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_47
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 88
+        width: 37
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edd0414fd08c5450800000000000000
+      internalID: 6078875293404159463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_48
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 94
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4c2656e758d5c30800000000000000
+      internalID: 4349779593023112357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_49
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 94
+        width: 34
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec301f78ce4cb08d0800000000000000
+      internalID: -2878991016601254962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_50
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 94
+        width: 38
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd4ba533b7f12540800000000000000
+      internalID: 4981535011920104903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_51
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 94
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a09f3f457569d560800000000000000
+      internalID: 7339008622292078754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_52
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 90
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443678632a5dd2ec0800000000000000
+      internalID: -3589978435268156604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_53
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 87
+        width: 40
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3b50198069e6a60800000000000000
+      internalID: 7669232178995508128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_54
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 6
+        width: 35
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4373d172430ce030800000000000000
+      internalID: 3525196192236663626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_55
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 6
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a342bf8a2bf0d4730800000000000000
+      internalID: 3984858505306383418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_56
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 6
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f808b86c90835af0800000000000000
+      internalID: -408841731900438288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_57
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 0
+        width: 35
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b279c7fe363556820800000000000000
+      internalID: 2910824422849681195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_58
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 0
+        width: 47
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd97540233912aad0800000000000000
+      internalID: -2692561919838684707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_59
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 34
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a313047c3e39b430800000000000000
+      internalID: 3799136190029042600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_60
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 0
+        width: 37
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fda989a230917e40800000000000000
+      internalID: 5652457554593820148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_61
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 0
+        width: 45
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97923f9007afe220800000000000000
+      internalID: 2517414337836128159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: adelar spritesheet nobg_63
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 42
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915a7817a711220f0800000000000000
+      internalID: -1143332137810287335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6010b11a65f25504baff4f003c6c9894
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      adelar spritesheet nobg_0: -2332576743643894892
+      adelar spritesheet nobg_1: 9037165483418462881
+      adelar spritesheet nobg_10: 7673505477305336443
+      adelar spritesheet nobg_11: 5082288966729859341
+      adelar spritesheet nobg_12: -7925181872070730537
+      adelar spritesheet nobg_13: 1870650476488724660
+      adelar spritesheet nobg_14: -5714910220235060348
+      adelar spritesheet nobg_15: 2727602811371608572
+      adelar spritesheet nobg_16: -5152243353627267605
+      adelar spritesheet nobg_17: 4831951108256448942
+      adelar spritesheet nobg_18: -9052090803219289575
+      adelar spritesheet nobg_19: -8689197823265118608
+      adelar spritesheet nobg_2: -8153746714480427069
+      adelar spritesheet nobg_20: 2861013125316250063
+      adelar spritesheet nobg_21: 5213109802194938926
+      adelar spritesheet nobg_22: -837927835085725782
+      adelar spritesheet nobg_23: 8198176545129923303
+      adelar spritesheet nobg_24: 4764453683462766432
+      adelar spritesheet nobg_25: -2948591983265751915
+      adelar spritesheet nobg_26: -7734996536539314744
+      adelar spritesheet nobg_27: 3778414695040315003
+      adelar spritesheet nobg_28: 1071989468082135058
+      adelar spritesheet nobg_29: -6030088926707549145
+      adelar spritesheet nobg_3: 6824668506862656487
+      adelar spritesheet nobg_30: -4631242345524816015
+      adelar spritesheet nobg_31: -8554336931575063348
+      adelar spritesheet nobg_32: 7758614301480959438
+      adelar spritesheet nobg_33: -6384639195459261015
+      adelar spritesheet nobg_34: 3663419353072275982
+      adelar spritesheet nobg_35: -6544186753205432186
+      adelar spritesheet nobg_36: -3114140116928385232
+      adelar spritesheet nobg_37: 642812201188569199
+      adelar spritesheet nobg_38: 7431953717965308461
+      adelar spritesheet nobg_39: 4971435465570553164
+      adelar spritesheet nobg_4: -3915669371079355681
+      adelar spritesheet nobg_40: 6156839389578156906
+      adelar spritesheet nobg_41: -6009185238887721010
+      adelar spritesheet nobg_42: 8987391885993971874
+      adelar spritesheet nobg_43: 4770233505369798979
+      adelar spritesheet nobg_44: 7013730668839526148
+      adelar spritesheet nobg_45: -3029306134496929129
+      adelar spritesheet nobg_46: -4613069182554481957
+      adelar spritesheet nobg_47: 6078875293404159463
+      adelar spritesheet nobg_48: 4349779593023112357
+      adelar spritesheet nobg_49: -2878991016601254962
+      adelar spritesheet nobg_5: -4372502777815534092
+      adelar spritesheet nobg_50: 4981535011920104903
+      adelar spritesheet nobg_51: 7339008622292078754
+      adelar spritesheet nobg_52: -3589978435268156604
+      adelar spritesheet nobg_53: 7669232178995508128
+      adelar spritesheet nobg_54: 3525196192236663626
+      adelar spritesheet nobg_55: 3984858505306383418
+      adelar spritesheet nobg_56: -408841731900438288
+      adelar spritesheet nobg_57: 2910824422849681195
+      adelar spritesheet nobg_58: -2692561919838684707
+      adelar spritesheet nobg_59: 3799136190029042600
+      adelar spritesheet nobg_6: -512433465971158551
+      adelar spritesheet nobg_60: 5652457554593820148
+      adelar spritesheet nobg_61: 2517414337836128159
+      adelar spritesheet nobg_62: -8621758398861100322
+      adelar spritesheet nobg_63: -1143332137810287335
+      adelar spritesheet nobg_64: 3912427642129327907
+      adelar spritesheet nobg_7: -2180349126064025564
+      adelar spritesheet nobg_8: 2860134508768304455
+      adelar spritesheet nobg_9: 4714232979100616695
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
