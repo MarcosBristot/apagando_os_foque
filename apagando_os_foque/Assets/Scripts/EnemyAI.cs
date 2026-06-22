@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     private int currentWaypointIndex = 0;
     private Transform player;
-    private PlayerController playerController;
+    private AdelarTopDownController playerController;
     private float alertTimer = 0f;
     private Rigidbody2D rb;
 
@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
         if (playerObj != null)
         {
             player = playerObj.transform;
-            playerController = playerObj.GetComponent<PlayerController>();
+            playerController = playerObj.GetComponent<AdelarTopDownController>();
         }
     }
 
