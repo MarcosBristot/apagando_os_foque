@@ -3,14 +3,14 @@ using UnityEngine;
 public class Lantern : MonoBehaviour
 {
     [Header("Visuais da Lâmpada")]
-    public SpriteRenderer spriteRenderer; 
+    public SpriteRenderer spriteRenderer;
     public Sprite spriteAcesa;
     public Sprite spriteApagada;
 
     private LightSource lightSource;
     private LampiaoCaipira lampiaoCaipira;
     private PosteLight posteLight;
-    
+
     public bool estaQuebrada = false;
 
     void Awake()
@@ -19,39 +19,42 @@ public class Lantern : MonoBehaviour
         lampiaoCaipira = GetComponent<LampiaoCaipira>();
         posteLight = GetComponent<PosteLight>();
 
-        // Tenta achar o SpriteRenderer automaticamente caso você esqueça de arrastar no Inspector
         if (spriteRenderer == null)
-        {
             spriteRenderer = GetComponent<SpriteRenderer>();
-        }
 
-        // Garante que o jogo comece com o sprite aceso correto
         if (spriteRenderer != null && spriteAcesa != null && !estaQuebrada)
-        {
             spriteRenderer.sprite = spriteAcesa;
-        }
+    }
+
+    void AplicarSpriteApagado()
+    {
+        if (spriteRenderer != null && spriteApagada != null)
+            spriteRenderer.sprite = spriteApagada;
     }
 
     public void TakeHit()
     {
-        if (estaQuebrada) return; 
-
-        estaQuebrada = true;
-
-        // TROCA O SPRITE PARA APAGADO
-        if (spriteRenderer != null && spriteApagada != null)
+        if (posteLight != null)
         {
-            spriteRenderer.sprite = spriteApagada;
+            posteLight.BreakLight();
+            if (posteLight.vidaAtual <= 0)
+            {
+                estaQuebrada = true;
+                AplicarSpriteApagado();
+            }
+            return;
         }
 
-        if (lightSource != null && lampiaoCaipira == null && posteLight == null)
+        if (estaQuebrada) return;
+
+        estaQuebrada = true;
+        AplicarSpriteApagado();
+
+        if (lightSource != null && lampiaoCaipira == null)
             lightSource.BreakLight();
 
         if (lampiaoCaipira != null)
             lampiaoCaipira.BreakLight();
-
-        if (posteLight != null)
-            posteLight.BreakLight();
     }
 
     public void Consertar()
@@ -61,25 +64,27 @@ public class Lantern : MonoBehaviour
         estaQuebrada = false;
         LightManager.Instance?.RegistrarLuzConsertada();
 
-        // TROCA O SPRITE DE VOLTA PARA ACESO
         if (spriteRenderer != null && spriteAcesa != null)
-        {
             spriteRenderer.sprite = spriteAcesa;
-        }
 
-        // Reativa a colisão e a vida
         if (posteLight != null)
         {
             posteLight.vidaAtual = posteLight.vidaMaxima;
             posteLight.GetComponent<CircleCollider2D>().enabled = true;
+            SpriteRenderer sr = posteLight.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.enabled = true;
         }
         else if (lampiaoCaipira != null)
         {
             lampiaoCaipira.GetComponent<CircleCollider2D>().enabled = true;
+            SpriteRenderer sr = lampiaoCaipira.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.enabled = true;
         }
         else if (lightSource != null)
         {
             lightSource.GetComponent<CircleCollider2D>().enabled = true;
+            SpriteRenderer sr = lightSource.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.enabled = true;
         }
     }
 

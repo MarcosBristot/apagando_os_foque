@@ -23,17 +23,17 @@ public class LightSource : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-            foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))            enemy.SetPlayerIlluminated(false);
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
+            enemy.SetPlayerIlluminated(false);
     }
 
-    // retorna 0 a 1 — mais perto do centro = mais próximo de 1
     public float GetIntensidadeNaPosicao(Vector2 posicao)
     {
         float distancia = Vector2.Distance(transform.position, posicao);
@@ -45,12 +45,23 @@ public class LightSource : MonoBehaviour
     {
         if (!isBreakable) return;
 
-        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(false);
 
-        // notifica o gerenciador de luzes
         LightManager.Instance?.RegistrarLuzApagada();
 
         lightCollider.enabled = false;
+
+        // desativa o sprite para a lanterna sumir visualmente
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = false;
+    }
+
+    public void ReativarLuz()
+    {
+        lightCollider.enabled = true;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = true;
     }
 }

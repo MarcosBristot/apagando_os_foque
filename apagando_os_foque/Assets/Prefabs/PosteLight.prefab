@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 377789927130434491}
   - component: {fileID: 8047081576219031527}
   - component: {fileID: 9036306461330535368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosteLight
-  m_TagString: Untagged
+  m_TagString: IlluminatedZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 6
+  m_Radius: 5
 --- !u!114 &8047081576219031527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,8 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8489ba47ecd68904ebea9efaa500e95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PosteLight
-  radius: 6
+  radius: 5
   vidaMaxima: 2
+  vidaAtual: 0
 --- !u!114 &9036306461330535368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,3 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6132c1a6832d584d976ca2878323d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lantern
+  spriteRenderer: {fileID: 0}
+  spriteAcesa: {fileID: 0}
+  spriteApagada: {fileID: 0}
+  estaQuebrada: 0

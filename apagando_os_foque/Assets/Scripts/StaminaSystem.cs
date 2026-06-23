@@ -58,11 +58,7 @@ public class StaminaSystem : MonoBehaviour
             aoAlterarVida?.Invoke(vidaAtual / vidaMax);
 
             if (vidaAtual <= 0)
-            {
-                aoMorrer?.Invoke();
-                GameManager.Instance?.Morrer();
-                enabled = false;
-            }
+                Morrer();
         }
     }
 
@@ -78,7 +74,29 @@ public class StaminaSystem : MonoBehaviour
         }
     }
 
+    // chamado pelo inimigo ao atacar o player
+    public void ReceberDano(float dano)
+    {
+        if (vidaAtual <= 0) return;
+
+        // dano vai direto na vida, ignora stamina
+        vidaAtual -= dano;
+        vidaAtual = Mathf.Max(vidaAtual, 0);
+        aoAlterarVida?.Invoke(vidaAtual / vidaMax);
+
+        if (vidaAtual <= 0)
+            Morrer();
+    }
+
+    void Morrer()
+    {
+        aoMorrer?.Invoke();
+        GameManager.Instance?.Morrer();
+        enabled = false;
+    }
+
     public void EntrarNaLuz() => naLuz = true;
+
     public void SairDaLuz()
     {
         naLuz = false;

@@ -43,10 +43,9 @@ public class PosteLight : MonoBehaviour
     public void BreakLight()
     {
         vidaAtual--;
+        if (vidaAtual > 0) return;
 
-        if (vidaAtual > 0) return; // ainda tem vida, não apaga
-
-        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None  ))
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(false);
 
         LightManager.Instance?.RegistrarLuzApagada();
@@ -55,5 +54,18 @@ public class PosteLight : MonoBehaviour
             lightSource.BreakLight();
 
         lightCollider.enabled = false;
+
+        // desativa o sprite para o poste sumir visualmente
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = false;
+    }
+
+    public void ReativarLuz()
+    {
+        vidaAtual = vidaMaxima;
+        lightCollider.enabled = true;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = true;
     }
 }

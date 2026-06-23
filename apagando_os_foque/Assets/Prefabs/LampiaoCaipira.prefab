@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 54862282420758188}
   - component: {fileID: 6909897498195789907}
   - component: {fileID: 126319753630217591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LampiaoCaipira
-  m_TagString: Untagged
+  m_TagString: IlluminatedZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

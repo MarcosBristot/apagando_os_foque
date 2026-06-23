@@ -26,28 +26,41 @@ public class LampiaoCaipira : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))            enemy.SetPlayerIlluminated(true);
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
+            enemy.SetPlayerIlluminated(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))            enemy.SetPlayerIlluminated(false);
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
+            enemy.SetPlayerIlluminated(false);
     }
 
     public void BreakLight()
     {
         if (!isBreakable) return;
 
-        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None   ))
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(false);
 
         LightManager.Instance?.RegistrarLuzApagada();
 
-        // apaga o LightSource também para parar o dano de stamina
         if (lightSource != null)
             lightSource.BreakLight();
 
         lightCollider.enabled = false;
+
+        // desativa o sprite para o lampião sumir visualmente
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = false;
+    }
+
+    public void ReativarLuz()
+    {
+        lightCollider.enabled = true;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.enabled = true;
     }
 }

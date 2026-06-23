@@ -10,6 +10,12 @@ public class AdelarTopDownController : MonoBehaviour
     public LayerMask camadaDeLuz;
     public float raioDeteccao = 0.5f;
 
+    [Header("Ataques")]
+    public float raioAtaqueLuz = 1.5f;    // raio para atacar luzes — tecla E
+    public float raioAtaqueInimigo = 1.5f;  // raio para atacar inimigos — tecla F
+    public KeyCode teclaAtaqueLuz = KeyCode.E;
+    public KeyCode teclaAtaqueInimigo = KeyCode.F;
+
     private Rigidbody2D rb;
     private Animator anim;
     private Vector2 movimento;
@@ -26,11 +32,9 @@ public class AdelarTopDownController : MonoBehaviour
 
     void Update()
     {
-        // input de movimento
         movimento.x = Input.GetAxisRaw("Horizontal");
         movimento.y = Input.GetAxisRaw("Vertical");
 
-        // animações
         anim.SetFloat("MoveX", movimento.x);
         anim.SetFloat("MoveY", movimento.y);
         anim.SetFloat("Speed", movimento.sqrMagnitude);
@@ -44,9 +48,13 @@ public class AdelarTopDownController : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Sign(movimento.x), 1, 1);
         }
 
-        // ataque
-        if (Input.GetKeyDown(KeyCode.E))
-            Atacar();
+        // E — ataca luzes
+        if (Input.GetKeyDown(teclaAtaqueLuz))
+            AtacarLuz();
+
+        // F — ataca inimigos
+        if (Input.GetKeyDown(teclaAtaqueInimigo))
+            AtacarInimigo();
 
         VerificarLuz();
     }
@@ -55,6 +63,30 @@ public class AdelarTopDownController : MonoBehaviour
     {
         float velocidade = naLuz ? velocidadeNormal : velocidadeSombra;
         rb.linearVelocity = movimento.normalized * velocidade;
+    }
+
+    // tecla E — só acerta luzes
+    void AtacarLuz()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, raioAtaqueLuz);
+        foreach (var hit in hits)
+        {
+            Lantern lanterna = hit.GetComponent<Lantern>();
+            if (lanterna != null)
+                lanterna.TakeHit();
+        }
+    }
+
+    // tecla F — só acerta inimigos
+    void AtacarInimigo()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, raioAtaqueInimigo);
+        foreach (var hit in hits)
+        {
+            EnemyAI inimigo = hit.GetComponent<EnemyAI>();
+            if (inimigo != null)
+                inimigo.ReceberDano(1);
+        }
     }
 
     void VerificarLuz()
@@ -69,8 +101,6 @@ public class AdelarTopDownController : MonoBehaviour
 
         if (estaVendoLuz)
         {
-            // tenta pegar intensidade do LightSource se existir
-            // senão usa intensidade máxima por padrão
             float maiorIntensidade = 1f;
             foreach (Collider2D col in colisoes)
             {
@@ -97,24 +127,14 @@ public class AdelarTopDownController : MonoBehaviour
         naLuz = false;
         stamina?.SairDaLuz();
     }
-    public void Atacar()
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
-        foreach (var hit in hits)
-        {
-            Lantern lanterna = hit.GetComponent<Lantern>();
-            if (lanterna != null)
-                lanterna.TakeHit();
-
-            EnemyAI inimigo = hit.GetComponent<EnemyAI>();
-            if (inimigo != null)
-                inimigo.ReceberDano(1);
-        }
-    }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, raioDeteccao);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, raioAtaqueInimigo);
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, raioAtaqueLuz);
     }
 }

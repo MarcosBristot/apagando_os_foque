@@ -2,21 +2,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public enum EnemyState { Patrol, Alert, Chase, FixLight }
+    public enum EnemyState { Patrol, Alert, Chase }
     public EnemyState currentState = EnemyState.Patrol;
 
-    [Header("Patrulha e Conserto")]
+    [Header("Patrulha")]
     public Transform[] waypoints;
     public float moveSpeed = 2f;
     public float waypointTolerance = 0.2f;
-    public float raioBuscaLuz = 5f; 
-    public float tempoParaConsertar = 2f;
-    
-    // --- NOVO: Sistema de Cooldown ---
-    [Tooltip("Tempo em segundos que ele ignora lâmpadas após consertar uma")]
-    public float cooldownEntreConsertos = 4f; 
-    private float timerCooldownAtual = 0f;
-    // ---------------------------------
 
     [Header("Detecção")]
     public float detectionRadius = 4f;
@@ -27,18 +19,19 @@ public class EnemyAI : MonoBehaviour
     private int vidaAtual;
     private bool morto = false;
 
+    [Header("Ataque")]
+    public float danoAoPlayer = 10f;
+    public float cooldownAtaque = 1.5f;
+    private float timerAtaque = 0f;
+
     private int currentWaypointIndex = 0;
     private Transform player;
     private AdelarTopDownController playerController;
     private float alertTimer = 0f;
-    
+
     private Rigidbody2D rb;
     private Animator anim;
-    private Vector3 escalaOriginal; 
-    
-    // Variáveis de Conserto
-    private Lantern lampadaAlvo;
-    private float timerConsertoAtual = 0f;
+    private Vector3 escalaOriginal;
 
     void Start()
     {
@@ -58,7 +51,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void Update() 
+    void Update()
     {
         if (morto) return;
         CalcularAnimacao();
@@ -72,18 +65,11 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        // Reduz o tempo de cooldown de conserto se for maior que zero
-        if (timerCooldownAtual > 0f)
-        {
-            timerCooldownAtual -= Time.fixedDeltaTime;
-        }
-
         switch (currentState)
         {
             case EnemyState.Patrol: HandlePatrol(); break;
             case EnemyState.Alert:  HandleAlert();  break;
             case EnemyState.Chase:  HandleChase();  break;
-            case EnemyState.FixLight: HandleFixLight(); break;
         }
     }
 
@@ -107,8 +93,8 @@ public class EnemyAI : MonoBehaviour
             {
                 float direcaoX = Mathf.Sign(direcaoNormalizada.x);
                 transform.localScale = new Vector3(
-                    direcaoX * Mathf.Abs(escalaOriginal.x), 
-                    escalaOriginal.y, 
+                    direcaoX * Mathf.Abs(escalaOriginal.x),
+                    escalaOriginal.y,
                     escalaOriginal.z
                 );
             }
@@ -117,22 +103,6 @@ public class EnemyAI : MonoBehaviour
 
     void HandlePatrol()
     {
-        // Só procura luz para consertar se o cooldown acabou
-        if (timerCooldownAtual <= 0f)
-        {
-            Collider2D[] luzesPerto = Physics2D.OverlapCircleAll(rb.position, raioBuscaLuz);
-            foreach (var col in luzesPerto)
-            {
-                Lantern luz = col.GetComponent<Lantern>();
-                if (luz != null && luz.estaQuebrada)
-                {
-                    lampadaAlvo = luz;
-                    currentState = EnemyState.FixLight;
-                    return;
-                }
-            }
-        }
-
         if (waypoints.Length == 0) { rb.linearVelocity = Vector2.zero; return; }
 
         Transform target = waypoints[currentWaypointIndex];
@@ -153,47 +123,6 @@ public class EnemyAI : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             alertTimer = alertDuration;
             currentState = EnemyState.Alert;
-        }
-    }
-
-    void HandleFixLight()
-    {
-        // Aborta se a lâmpada não existir mais ou já foi consertada[cite: 15]
-        if (lampadaAlvo == null || !lampadaAlvo.estaQuebrada)
-        {
-            currentState = EnemyState.Patrol;
-            return;
-        }
-
-        float dist = Vector2.Distance(rb.position, lampadaAlvo.transform.position);
-
-        if (dist > 0.8f) 
-        {
-            Vector2 direcao = ((Vector2)lampadaAlvo.transform.position - rb.position).normalized;
-            rb.linearVelocity = direcao * moveSpeed;
-        }
-        else 
-        {
-            rb.linearVelocity = Vector2.zero; 
-            
-            if (timerConsertoAtual == 0f && anim != null)
-            {
-                anim.SetTrigger("Consertar");
-            }
-
-            timerConsertoAtual += Time.fixedDeltaTime;
-
-            if (timerConsertoAtual >= tempoParaConsertar)
-            {
-                lampadaAlvo.Consertar(); 
-                timerConsertoAtual = 0f;
-                lampadaAlvo = null;
-                
-                // Aplica o cooldown para não consertar outra luz imediatamente
-                timerCooldownAtual = cooldownEntreConsertos; 
-                
-                currentState = EnemyState.Patrol;
-            }
         }
     }
 
@@ -238,11 +167,19 @@ public class EnemyAI : MonoBehaviour
         if (dist < 0.8f)
         {
             rb.linearVelocity = Vector2.zero;
+            timerAtaque -= Time.fixedDeltaTime;
+            if (timerAtaque <= 0f)
+            {
+                timerAtaque = cooldownAtaque;
+                StaminaSystem stamina = player.GetComponent<StaminaSystem>();
+                if (stamina != null)
+                    stamina.ReceberDano(danoAoPlayer);
+            }
             return;
         }
 
         Vector2 direcao = ((Vector2)player.position - rb.position).normalized;
-        rb.linearVelocity = direcao * moveSpeed * 1.5f; 
+        rb.linearVelocity = direcao * moveSpeed * 1.5f;
     }
 
     public void ReceberDano(int dano = 1)
@@ -300,8 +237,5 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
-        
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, raioBuscaLuz); 
     }
 }
