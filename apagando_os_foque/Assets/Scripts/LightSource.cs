@@ -23,15 +23,14 @@ public class LightSource : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
+            foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))
             enemy.SetPlayerIlluminated(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
-            enemy.SetPlayerIlluminated(false);
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))            enemy.SetPlayerIlluminated(false);
     }
 
     // retorna 0 a 1 — mais perto do centro = mais próximo de 1
@@ -46,13 +45,12 @@ public class LightSource : MonoBehaviour
     {
         if (!isBreakable) return;
 
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))
             enemy.SetPlayerIlluminated(false);
 
         // notifica o gerenciador de luzes
         LightManager.Instance?.RegistrarLuzApagada();
 
         lightCollider.enabled = false;
-        gameObject.SetActive(false);
     }
 }

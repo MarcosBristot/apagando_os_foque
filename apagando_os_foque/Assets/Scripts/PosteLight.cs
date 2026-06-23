@@ -5,7 +5,7 @@ public class PosteLight : MonoBehaviour
     [Header("Configuração")]
     public float radius = 6f;
     public int vidaMaxima = 2;
-    private int vidaAtual;
+    public int vidaAtual;
 
     private CircleCollider2D lightCollider;
     private LightSource lightSource;
@@ -29,14 +29,14 @@ public class PosteLight : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(false);
     }
 
@@ -46,7 +46,7 @@ public class PosteLight : MonoBehaviour
 
         if (vidaAtual > 0) return; // ainda tem vida, não apaga
 
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None  ))
             enemy.SetPlayerIlluminated(false);
 
         LightManager.Instance?.RegistrarLuzApagada();
@@ -55,6 +55,5 @@ public class PosteLight : MonoBehaviour
             lightSource.BreakLight();
 
         lightCollider.enabled = false;
-        gameObject.SetActive(false);
     }
 }

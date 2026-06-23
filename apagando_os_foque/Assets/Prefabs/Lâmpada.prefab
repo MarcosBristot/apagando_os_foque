@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6100665371258967494}
   - component: {fileID: 3376030789276013527}
   m_Layer: 6
-  m_Name: Lantern
+  m_Name: "L\xE2mpada"
   m_TagString: IlluminatedZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.8339342, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8333334, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,3 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6132c1a6832d584d976ca2878323d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lantern
+  spriteRenderer: {fileID: 0}
+  spriteAcesa: {fileID: 0}
+  spriteApagada: {fileID: 0}
+  estaQuebrada: 0

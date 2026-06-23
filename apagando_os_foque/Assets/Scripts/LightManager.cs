@@ -32,4 +32,10 @@ public class LightManager : MonoBehaviour
         if (luzesApagadas >= totalLuzes)
             aoApagarTodasAsLuzes?.Invoke();
     }
+    public void RegistrarLuzConsertada()
+    {
+        luzesApagadas--;
+        if (luzesApagadas < 0) luzesApagadas = 0; // Prevenção de segurança
+        Debug.Log($"Luzes consertadas: {luzesApagadas}/{totalLuzes}");
+    }
 }

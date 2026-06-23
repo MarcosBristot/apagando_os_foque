@@ -97,7 +97,6 @@ public class AdelarTopDownController : MonoBehaviour
         naLuz = false;
         stamina?.SairDaLuz();
     }
-
     public void Atacar()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);

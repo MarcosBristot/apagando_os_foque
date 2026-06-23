@@ -26,22 +26,20 @@ public class LampiaoCaipira : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
-            enemy.SetPlayerIlluminated(true);
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))            enemy.SetPlayerIlluminated(true);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
-            enemy.SetPlayerIlluminated(false);
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None ))            enemy.SetPlayerIlluminated(false);
     }
 
     public void BreakLight()
     {
         if (!isBreakable) return;
 
-        foreach (var enemy in FindObjectsOfType<EnemyAI>())
+        foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None   ))
             enemy.SetPlayerIlluminated(false);
 
         LightManager.Instance?.RegistrarLuzApagada();
@@ -51,6 +49,5 @@ public class LampiaoCaipira : MonoBehaviour
             lightSource.BreakLight();
 
         lightCollider.enabled = false;
-        gameObject.SetActive(false);
     }
 }

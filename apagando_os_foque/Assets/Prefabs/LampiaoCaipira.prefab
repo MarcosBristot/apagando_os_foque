@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 0.6647991, b: 0.2688679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,3 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6132c1a6832d584d976ca2878323d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lantern
+  spriteRenderer: {fileID: 0}
+  spriteAcesa: {fileID: 0}
+  spriteApagada: {fileID: 0}
+  estaQuebrada: 0
