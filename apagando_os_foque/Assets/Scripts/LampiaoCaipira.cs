@@ -50,17 +50,7 @@ public class LampiaoCaipira : MonoBehaviour
             lightSource.BreakLight();
 
         lightCollider.enabled = false;
-
-        // desativa o sprite para o lampião sumir visualmente
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = false;
-    }
-
-    public void ReativarLuz()
-    {
-        lightCollider.enabled = true;
-
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = true;
+        
+        // A linha gameObject.SetActive(false) foi removida para o sprite quebrado continuar visível
     }
 }

@@ -274,11 +274,14 @@ MonoBehaviour:
   moveSpeed: 2
   waypointTolerance: 0.2
   raioBuscaLuz: 5
-  tempoParaConsertar: 2
-  cooldownEntreConsertos: 4
+  tempoParaConsertar: 3
+  distanciaParaConserto: 1.5
   detectionRadius: 4
-  alertDuration: 2
+  alertDuration: 3
   vidaMaxima: 3
+  danoAoPlayer: 20
+  cooldownAtaque: 1.5
+  cooldownEntreConsertos: 120
 --- !u!114 &7656069176994201288
 MonoBehaviour:
   m_ObjectHideFlags: 0

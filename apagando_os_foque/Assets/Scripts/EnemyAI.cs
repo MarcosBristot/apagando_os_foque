@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public enum EnemyState { Patrol, Alert, Chase }
+    public enum EnemyState { Patrol, Alert, Chase, FixLight }
     public EnemyState currentState = EnemyState.Patrol;
 
     [Header("Patrulha")]
     public Transform[] waypoints;
     public float moveSpeed = 2f;
     public float waypointTolerance = 0.2f;
+    public float raioBuscaLuz = 5f; 
+    public float tempoParaConsertar = 2f;
+    [Tooltip("Distância que ele precisa chegar da luz para consertar")]
+    public float distanciaParaConserto = 1.5f;
 
     [Header("Detecção")]
     public float detectionRadius = 4f;
@@ -23,6 +27,13 @@ public class EnemyAI : MonoBehaviour
     public float danoAoPlayer = 10f;
     public float cooldownAtaque = 1.5f;
     private float timerAtaque = 0f;
+
+    [Tooltip("Tempo em segundos que ele ignora lâmpadas após consertar uma")]
+    public float cooldownEntreConsertos = 4f; 
+    private float timerCooldownAtual = 0f;
+    // Variáveis de Conserto
+    private Lantern lampadaAlvo;
+    private float timerConsertoAtual = 0f;
 
     private int currentWaypointIndex = 0;
     private Transform player;
@@ -65,11 +76,18 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
+        // REDUZ O COOLDOWN: Isso garante que ele volte a procurar luzes depois de um tempo
+        if (timerCooldownAtual > 0f)
+        {
+            timerCooldownAtual -= Time.fixedDeltaTime;
+        }
+
         switch (currentState)
         {
             case EnemyState.Patrol: HandlePatrol(); break;
             case EnemyState.Alert:  HandleAlert();  break;
             case EnemyState.Chase:  HandleChase();  break;
+            case EnemyState.FixLight: HandleFixLight(); break; // <-- A LINHA QUE FALTAVA!
         }
     }
 
@@ -103,6 +121,23 @@ public class EnemyAI : MonoBehaviour
 
     void HandlePatrol()
     {
+        // NOVA LÓGICA: Procura todas as Lanterns na cena, ignorando colisões físicas
+        if (timerCooldownAtual <= 0f)
+        {
+            Lantern[] todasAsLuzes = FindObjectsByType<Lantern>(FindObjectsSortMode.None);
+            foreach (Lantern luz in todasAsLuzes)
+            {
+                // Checa se está quebrada E se está dentro do raio de visão do inimigo
+                if (luz.estaQuebrada && Vector2.Distance(rb.position, luz.transform.position) <= raioBuscaLuz)
+                {
+                    lampadaAlvo = luz;
+                    currentState = EnemyState.FixLight;
+                    return;
+                }
+            }
+        }
+
+        // Continua a patrulha normal se não achar luzes[cite: 15]
         if (waypoints.Length == 0) { rb.linearVelocity = Vector2.zero; return; }
 
         Transform target = waypoints[currentWaypointIndex];
@@ -123,6 +158,48 @@ public class EnemyAI : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             alertTimer = alertDuration;
             currentState = EnemyState.Alert;
+        }
+    }
+
+void HandleFixLight()
+    {
+        // Se a lâmpada sumir ou for consertada por outro
+        if (lampadaAlvo == null || !lampadaAlvo.estaQuebrada)
+        {
+            currentState = EnemyState.Patrol;
+            return;
+        }
+
+        float dist = Vector2.Distance(rb.position, lampadaAlvo.transform.position);
+
+        // Se ainda está mais longe que a distância de conserto, caminha até lá
+        if (dist > distanciaParaConserto) 
+        {
+            Vector2 direcao = ((Vector2)lampadaAlvo.transform.position - rb.position).normalized;
+            rb.linearVelocity = direcao * moveSpeed;
+        }
+        else // Chegou na lâmpada
+        {
+            rb.linearVelocity = Vector2.zero; // Para o personagem
+            
+            if (timerConsertoAtual == 0f && anim != null)
+            {
+                anim.SetTrigger("Consertar"); // Chama a animação
+            }
+
+            timerConsertoAtual += Time.fixedDeltaTime;
+
+            if (timerConsertoAtual >= tempoParaConsertar)
+            {
+                lampadaAlvo.Consertar(); // Conserta fisicamente a luz
+                timerConsertoAtual = 0f;
+                lampadaAlvo = null;
+                
+                // Aplica o cooldown para não consertar outra luz imediatamente
+                timerCooldownAtual = cooldownEntreConsertos; 
+                
+                currentState = EnemyState.Patrol; // Volta a patrulhar
+            }
         }
     }
 

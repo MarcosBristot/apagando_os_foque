@@ -36,6 +36,9 @@ public class LightSource : MonoBehaviour
 
     public float GetIntensidadeNaPosicao(Vector2 posicao)
     {
+        // Trava de segurança: se a colisão da luz foi desativada (luz quebrada), retorna 0 de dano
+        if (lightCollider != null && !lightCollider.enabled) return 0f;
+
         float distancia = Vector2.Distance(transform.position, posicao);
         float normalizado = Mathf.Clamp01(1f - (distancia / radius));
         return normalizado * intensidadeMaxima;
@@ -48,20 +51,13 @@ public class LightSource : MonoBehaviour
         foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(false);
 
+        // Notifica o gerenciador de luzes
         LightManager.Instance?.RegistrarLuzApagada();
 
-        lightCollider.enabled = false;
-
-        // desativa o sprite para a lanterna sumir visualmente
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = false;
-    }
-
-    public void ReativarLuz()
-    {
-        lightCollider.enabled = true;
-
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = true;
+        // Apenas desativa a colisão para parar de dar dano, MAS NÃO desativa o gameObject
+        if (lightCollider != null)
+        {
+            lightCollider.enabled = false;
+        }
     }
 }

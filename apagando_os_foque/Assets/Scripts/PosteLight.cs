@@ -4,7 +4,7 @@ public class PosteLight : MonoBehaviour
 {
     [Header("Configuração")]
     public float radius = 6f;
-    public int vidaMaxima = 2;
+    public int vidaMaxima = 1; // Reduzido para 1 para sincronizar perfeitamente com a troca de sprite
     public int vidaAtual;
 
     private CircleCollider2D lightCollider;
@@ -42,8 +42,7 @@ public class PosteLight : MonoBehaviour
 
     public void BreakLight()
     {
-        vidaAtual--;
-        if (vidaAtual > 0) return;
+        vidaAtual = 0; // Força a zerar a vida imediatamente
 
         foreach (var enemy in FindObjectsByType<EnemyAI>(FindObjectsSortMode.None))
             enemy.SetPlayerIlluminated(false);
@@ -54,18 +53,7 @@ public class PosteLight : MonoBehaviour
             lightSource.BreakLight();
 
         lightCollider.enabled = false;
-
-        // desativa o sprite para o poste sumir visualmente
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = false;
-    }
-
-    public void ReativarLuz()
-    {
-        vidaAtual = vidaMaxima;
-        lightCollider.enabled = true;
-
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = true;
+        
+        // A linha gameObject.SetActive(false) foi removida para o sprite quebrado continuar visível
     }
 }
